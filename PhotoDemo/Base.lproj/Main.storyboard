@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FIY-D5-hBO">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--System Take Photo-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ncs-pt-Oju">
+                                <rect key="frame" x="150" y="200" width="300" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="8TR-dm-Gc6"/>
+                                    <constraint firstAttribute="height" constant="200" id="u6A-fQ-fF8"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90E-hP-ekn">
+                                <rect key="frame" x="219" y="562" width="161" height="30"/>
+                                <state key="normal" title="Custom Photo View ➡️">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="IzP-zK-XHE" kind="show" id="wer-sM-a5t"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Ncs-pt-Oju" secondAttribute="centerY" id="EWS-k2-5Zd"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="90E-hP-ekn" secondAttribute="bottom" constant="8" id="TUY-h8-E5v"/>
+                            <constraint firstAttribute="centerX" secondItem="90E-hP-ekn" secondAttribute="centerX" id="g8P-K2-Chl"/>
+                            <constraint firstAttribute="centerX" secondItem="Ncs-pt-Oju" secondAttribute="centerX" id="mOy-5F-EBy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="System Take Photo" id="MuA-R5-a8h">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Nku-Dx-7bb">
+                            <connections>
+                                <action selector="showSelectBar:" destination="vXZ-lx-hvc" id="UcD-8z-jTY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageview" destination="Ncs-pt-Oju" id="X8v-d4-5ua"/>
+                        <outlet property="selectBarButton" destination="Nku-Dx-7bb" id="JHP-XL-C30"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="549" y="-571"/>
+        </scene>
+        <!--Custom UI-->
+        <scene sceneID="6fa-Bt-W0C">
+            <objects>
+                <viewController id="IzP-zK-XHE" customClass="CustomTakePhotoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xS5-xc-gio"/>
+                        <viewControllerLayoutGuide type="bottom" id="XnA-zZ-J1j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vfr-DN-fNv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NCM-K2-aaX">
+                                <rect key="frame" x="150" y="200" width="300" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ZNO-ze-nIt"/>
+                                    <constraint firstAttribute="width" constant="300" id="rKO-Pu-q4O"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="NCM-K2-aaX" secondAttribute="centerX" id="NVK-E1-dXd"/>
+                            <constraint firstAttribute="centerY" secondItem="NCM-K2-aaX" secondAttribute="centerY" id="ftJ-Ls-4BM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Custom UI" id="Ef6-zI-c94">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Rqb-RF-vfu">
+                            <connections>
+                                <action selector="takePhotoOrChose:" destination="IzP-zK-XHE" id="Vph-0Q-Y9G"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageview" destination="NCM-K2-aaX" id="rJa-gC-MHG"/>
+                        <outlet property="takePhotoBarButton" destination="Rqb-RF-vfu" id="Jkz-9U-MMA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7is-5D-Zue" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212" y="-571"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8Ds-TV-9A2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FIY-D5-hBO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dw0-ZX-TYA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Qf7-ao-ErU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Swo-UB-WIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-22" y="-571"/>
+        </scene>
+    </scenes>
+</document>
