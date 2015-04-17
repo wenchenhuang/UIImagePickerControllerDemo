@@ -98,7 +98,6 @@
 				527A02711ACA44D400D2E00D /* CustomTakePhotoViewController.m */,
 				5290F72E1ACB7F2300108943 /* CustomOverLayview.xib */,
 				527A02541ACA3A7F00D2E00D /* Main.storyboard */,
-				5290F7301ACB801A00108943 /* images.jpeg */,
 				527A024A1ACA3A7F00D2E00D /* Supporting Files */,
 			);
 			path = PhotoDemo;
@@ -108,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				527A02571ACA3A7F00D2E00D /* Images.xcassets */,
+				5290F7301ACB801A00108943 /* images.jpeg */,
 				527A02591ACA3A7F00D2E00D /* LaunchScreen.xib */,
 				527A024E1ACA3A7F00D2E00D /* AppDelegate.h */,
 				527A024F1ACA3A7F00D2E00D /* AppDelegate.m */,
